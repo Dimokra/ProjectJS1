@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,750;1,750&display=swap" rel="stylesheet">
+  </head>
+  <body class="page">
+    <header></header>
+    <main>
+      <div class="input__container">
+      Введите название приложения:
+      <input id="heading" class="input__heading" maxlength="20" type="text" /> Выберите иконку:
+      <input id="fileSelect" class="input__file" type="file" /> Введите описание вашего приложения:
+      <input id="description" class="input__description" maxlength="100" type="text" />
+      <button id="addButton">Завершить создание</button>
+      </div>
+      <p id="warning"></p>
+      <div id="cardsMainContainer" class="cards__main-container">
+        
+      </div>
+    </main>
+    <footer></footer>
+    
+    <template id="cardTemplate">
+      <div class="card__container">
+        <section class="card__top-side">
+          <img class="card__image" src="" alt="" />
+          <h3 class="card__heading"></h3>
+        </section>
+        <section class="card__bottom-side">
+          <p class="card__description"></p>
+          <button class="card__button-static like-unpressed"></button>
+          <button class="delete-button"></button>
+        </section>
+      </div>
+    </template>
+  </body>
+  <script src="./scripts/script.js"></script>
+</html>
