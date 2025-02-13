@@ -27,7 +27,7 @@
     height: auto; 
 }
 
-.card__parag {
+.card__description {
     text-wrap: wrap;
     font-size: 90%;
     word-wrap: break-word;
