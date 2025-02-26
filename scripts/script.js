@@ -1,4 +1,8 @@
 import '../styles/main.css'
+import agaAppLogo from '../assets/images/aga.png'
+import notifAppLogo from '../assets/images/NotifApp.png'
+import { createExampleCards } from './cardExampleFunc';
+
 const page = document.querySelector("body");
 const addButton = page.querySelector("#addButton");
 const cardTemplate = page.querySelector("#cardTemplate").content;
@@ -10,39 +14,17 @@ let cardsData = [];
 let cardsExample = [
   {
     title: 'Напоминание',
-    imageSrc: '/assets/images/NotifApp.png',
+    imageSrc: notifAppLogo,
     description: 'Данное приложение напоминает про работы, которые вы должны сдать преподавателям в заданные дедлайны'
   },
   {
     title: 'Ага',
-    imageSrc: '/assets/images/aga.png',
+    imageSrc: agaAppLogo,
     description: 'Данное приложение просто бесполезно, оно ничего не делает, лишь занимает место в памяти'
   },
 ]
 
-function createExampleCards() {
-  cardsExample.forEach(data => {
-    const cloneCard = cardTemplate.cloneNode(true)
-    cloneCard.querySelector('.card__heading').textContent = data.title
-    cloneCard.querySelector('.card__image').src = data.imageSrc
-    cloneCard.querySelector('.card__description').textContent = data.description
-
-    const likeButton = cloneCard.querySelector(".card__button-static")
-        likeButton.addEventListener("click", () => {
-        likeButton.classList.toggle("like-pressed");
-        likeButton.classList.toggle("like-unpressed");
-      });
-
-    cloneCard.querySelector('.delete-button').addEventListener('click', function () {
-      this.closest('.card__container').remove()
-    })
-
-    cardParent.appendChild(cloneCard)
-  })
-}
-
-
-createExampleCards(cardsExample)
+createExampleCards(cardsExample, cardTemplate, cardParent)
 
 function addObjectToArray() {
   let headingInput = page.querySelector("#heading").value;
