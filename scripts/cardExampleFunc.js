@@ -1,4 +1,17 @@
-export function createExampleCards(obj, template, parent) {
+let cardsExample = [
+  {
+    title: 'Напоминание',
+    imageSrc: '/assets/images/NotifApp.png',
+    description: 'Данное приложение напоминает про работы, которые вы должны сдать преподавателям в заданные дедлайны'
+  },
+  {
+    title: 'Ага',
+    imageSrc:'/assets/images/Aga.png' ,
+    description: 'Данное приложение просто бесполезно, оно ничего не делает, лишь занимает место в памяти'
+  },
+]
+
+function createExampleCards(obj, template, parent) {
     obj.forEach(data => {
       const cloneCard = template.cloneNode(true)
       cloneCard.querySelector('.card__heading').textContent = data.title
@@ -19,4 +32,4 @@ export function createExampleCards(obj, template, parent) {
     })
   }
   
-  
+  export {cardsExample, createExampleCards}

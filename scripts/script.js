@@ -1,7 +1,6 @@
 import '../styles/main.css'
-import agaAppLogo from '../assets/images/aga.png'
-import notifAppLogo from '../assets/images/NotifApp.png'
-import { createExampleCards } from './cardExampleFunc';
+import {cardsExample, createExampleCards } from './cardExampleFunc.js';
+
 
 const page = document.querySelector("body");
 const addButton = page.querySelector("#addButton");
@@ -10,19 +9,6 @@ const cardParent = page.querySelector("#cardsMainContainer");
 let warnNotif = page.querySelector("#warning");
 
 let cardsData = [];
-
-let cardsExample = [
-  {
-    title: 'Напоминание',
-    imageSrc: notifAppLogo,
-    description: 'Данное приложение напоминает про работы, которые вы должны сдать преподавателям в заданные дедлайны'
-  },
-  {
-    title: 'Ага',
-    imageSrc: agaAppLogo,
-    description: 'Данное приложение просто бесполезно, оно ничего не делает, лишь занимает место в памяти'
-  },
-]
 
 createExampleCards(cardsExample, cardTemplate, cardParent)
 
@@ -33,10 +19,7 @@ function addObjectToArray() {
 
   if (!headingInput || !descriptionInput || !fileSelect) {
     warnNotif.textContent = "Пожалуйста, заполните все поля!";
-    warnNotif.style.display = "block";
-    return;
-  } else {
-    warnNotif.style.display = "none";
+    return [];
   }
 
   let imageSrc = fileSelect ? URL.createObjectURL(fileSelect) : "";
@@ -73,10 +56,14 @@ function cloneCardWithData(title, image, description) {
       }); 
       return cloneCard
     }
-  
-
+    
 addButton.addEventListener("click", function () {
-  addObjectToArray();
-  const newClonedCard = cloneCardWithData(cardsData[0].title, cardsData[0].imageSrc, cardsData[0].description)
+  const newCardData = addObjectToArray(); 
+  if (newCardData.length < 1) {
+    alert("Заполните все поля");
+    return;
+  }
+  const newClonedCard = cloneCardWithData(newCardData[0].title, newCardData[0].imageSrc, newCardData[0].description);
+  
   cardParent.appendChild(newClonedCard);
 });
