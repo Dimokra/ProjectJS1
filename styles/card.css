@@ -56,8 +56,8 @@
 }
 
 .delete-button {
-    height: 15px;
-    width: 15px;
+    height: 30px;
+    width: 30px;
     background-size: cover;
     border: none;
     background-color: #c300ff00;
@@ -65,16 +65,16 @@
 }
 
 .edit-button {
-    width: 15px;
-    height: 15px;
+    width: 30px;
+    height: 30px;
 }
 
 .card__button-container {
-    width: 30px;
-    height: 45px;
+    width: 10%;
+    height: 10%;
     border-radius: 10px;
     display: block;
-    position: fixed;
+    position: absolute;
     display: grid;
     grid-template-rows: 1fr 1fr;
     row-gap: 10px;
@@ -92,3 +92,4 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
+
