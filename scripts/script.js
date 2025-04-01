@@ -2,7 +2,8 @@ import '../styles/main.css'
 import { createExampleCards } from "./createCardScript/cardExampleFunc"
 import {cardTemplate, cardParent, addObjectToArray, cloneCardWithData} from "./createCardScript/cardFromInput"
 import { cardsExample } from './data/cardsData'
-import firstMenu from './cardEdit/firstMenu.js'
+import {name} from './cardEdit/firstMenu.js'
+import * as editCard from './cardEdit/editCards.js'
 
 createExampleCards(cardsExample, cardTemplate, cardParent)
 
@@ -30,4 +31,20 @@ cardParent.addEventListener('click', (e) => {
   }
 });
 
-firstMenu
+cardParent.addEventListener("click", (e) => {
+  if (e.target.classList.contains("edit-button")) {
+      document.querySelector('.card__modal-window').classList.add('card__modal-show')
+      document.querySelector('.card__modal-window').classList.remove('card__modal-hide')
+    } else {
+      document.querySelector('.card__modal-window').classList.add('card__modal-hide')
+    }
+  });
+
+  const modal = document.querySelector('.card__modal-window')
+  modal.addEventListener("click", (e) => {
+    if (e.target.classList.contains("card__modal-close")) {
+        document.querySelector('.card__modal-window').classList.add('card__modal-hide')
+        
+    }});
+  
+    

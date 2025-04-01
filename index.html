@@ -41,10 +41,18 @@
       <div id="cardsMainContainer" class="cards__main-container"></div>
       <div class="card__modal-window">
         <div class="card__modal-content">
-          <form class="card-form__edit-card">
+          <button class="card__modal-close">Закрыть</button>
+          <form class="card-form__edit-card" id="cardFormEditCard">
             <h2>Редактировать карточку</h2>
-
-            <div></div>
+            <div>
+              <label for="editCardHeading">Заголовок</label>
+              <input type="text" name="" id="editCardHeading">
+            </div>
+            <div>
+              <label for="editCardDescription">Описание</label>
+              <input type="text" name="" id="editCardDescription">
+            </div>
+            <button type="submit" id="editCardFormButton">Изменить</button>
           </form>
         </div>
       </div>
