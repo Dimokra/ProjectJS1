@@ -1,6 +1,6 @@
 import '../styles/main.css'
 import { createExampleCards } from "./createCardScript/cardExampleFunc"
-import {cardTemplate, cardParent, addObjectToArray, cloneCardWithData} from "./createCardScript/cardFromInput"
+import {cardTemplate, cardParent, addObjectToArray, cloneCardWithData, warnNotif} from "./createCardScript/cardFromInput"
 import { cardsExample } from './data/cardsData'
 import {name} from './cardEdit/firstMenu.js'
 import * as editCard from './cardEdit/editCards.js'
@@ -10,10 +10,7 @@ createExampleCards(cardsExample, cardTemplate, cardParent)
 document.querySelector(".input__container").addEventListener("submit", function (e) {
   e.preventDefault()
   const newCardData = addObjectToArray(); 
-  if (newCardData.length < 1) {
-    alert("Заполните все поля");
-    return;
-  }
+  if (newCardData.length < 1) {return warnNotif.textContent = "Пожалуйста, заполните все поля!"} {warnNotif.textContent = ""}
   const newClonedCard = cloneCardWithData(newCardData[0].title, newCardData[0].imageSrc, newCardData[0].description);
   
   cardParent.appendChild(newClonedCard);

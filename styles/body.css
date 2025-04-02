@@ -50,7 +50,6 @@ input[type="file"] {
 #warning {
   color: red; 
   font-size: 14px; 
-  display: none; 
 }
 
 .page::after {

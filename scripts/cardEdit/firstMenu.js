@@ -1,5 +1,5 @@
 import { cardParent } from "../createCardScript/cardFromInput";
-
+import menuVis from "./toggleCardButtonVisibility";
 export default document.body.addEventListener("mousedown", (e) => {
   if (e.button === 2) {
     const cardContainer = e.target.closest(".card__container");
@@ -7,15 +7,7 @@ export default document.body.addEventListener("mousedown", (e) => {
       const cardButtonContainer = cardContainer.querySelector(
         ".card__button-container"
       );
-      if (cardButtonContainer) {
-        if (
-          cardButtonContainer.classList.contains("card__button-container-hide")
-        ) {
-          cardButtonContainer.classList.remove("card__button-container-hide");
-        } else {
-          cardButtonContainer.classList.add("card__button-container-hide");
-        }
-      }
+      menuVis(cardButtonContainer)
     }
 
     cardParent.addEventListener("contextmenu", (e) => {

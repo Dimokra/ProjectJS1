@@ -10,7 +10,6 @@ function addObjectToArray() {
   let descriptionInput = page.querySelector("#description").value;
 
   if (!headingInput || !descriptionInput || !fileSelect) {
-    warnNotif.textContent = "Пожалуйста, заполните все поля!";
     return [];
   }
 
@@ -38,4 +37,4 @@ function cloneCardWithData(title, image, description) {
       return cloneCard
     }
 
-export {cardTemplate, cardParent, addObjectToArray, cloneCardWithData}
+export {cardTemplate, cardParent, addObjectToArray, cloneCardWithData, warnNotif}

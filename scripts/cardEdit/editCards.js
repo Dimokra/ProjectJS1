@@ -1,3 +1,4 @@
+import menuVis from "./toggleCardButtonVisibility";
 
 export default document.body.addEventListener('mousedown', (e) => {
     if (e.button === 2) {  
@@ -23,6 +24,6 @@ export default document.body.addEventListener('mousedown', (e) => {
             alert ('мало текста')
           }
         const cardButtonContainer = cardContainer.querySelector('.card__button-container');
-        cardButtonContainer.classList.add('card__button-container-hide');
+        menuVis(cardButtonContainer)
       
       })}}})
