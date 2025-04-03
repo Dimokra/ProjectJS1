@@ -69,25 +69,6 @@
     height: 30px;
 }
 
-.card__button-container {
-    width: 10%;
-    height: 10%;
-    border-radius: 10px;
-    display: block;
-    position: absolute;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    row-gap: 10px;
-    justify-items: center;
-    align-items: center;
-    background-color: bisque;
-}
-
-.card__button-container-hide {
-    display: none;
-    pointer-events: none;
-}
-
 .inputs {
     display: grid;
     grid-template-rows: 1fr 1fr;

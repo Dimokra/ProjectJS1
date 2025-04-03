@@ -37,6 +37,7 @@
         </div>
         <button type="submit" id="addButton">Завершить создание</button>
       </form>
+      
       <p id="warning"></p>
       <div id="cardsMainContainer" class="cards__main-container"></div>
       <div class="card__modal-window">
@@ -53,6 +54,7 @@
               <input type="text" name="" id="editCardDescription">
             </div>
             <button type="submit" id="editCardFormButton">Изменить</button>
+              <button class="delete-button"></button>
           </form>
         </div>
       </div>
@@ -68,10 +70,7 @@
         <section class="card__bottom-side">
           <p class="card__description"></p>
           <button class="card__button-static like-unpressed"></button>
-          <div class="card__button-container card__button-container-hide">
-            <button class="delete-button"></button>
-            <button class="edit-button">  </button>
-        </div>
+          
         </section>
       </div>
     </template>

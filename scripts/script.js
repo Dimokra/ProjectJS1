@@ -4,6 +4,8 @@ import {cardTemplate, cardParent, addObjectToArray, cloneCardWithData, warnNotif
 import { cardsExample } from './data/cardsData'
 import {name} from './cardEdit/firstMenu.js'
 import * as editCard from './cardEdit/editCards.js'
+import { modalWis } from './cardEdit/firstMenu.js'
+
 
 createExampleCards(cardsExample, cardTemplate, cardParent)
 
